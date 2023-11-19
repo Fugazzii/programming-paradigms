@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "circular_buffer.h": "c",
+        "stdlib.h": "c",
+        "string.h": "c",
+        "student_buffer.h": "c"
+    }
+}

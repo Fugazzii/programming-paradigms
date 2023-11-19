@@ -1,0 +1,13 @@
+Ints_Empty 1 1
+Ints_Basic 1 1
+Ints_Sort 1 1
+Chars_Empty 1 1
+Chars_Basic 1 1
+Chars_Sort 1 1
+Tuple_Empty 1 1
+Tuple_Pairs_Basic 1 1
+Tuple_Pairs_Sort 1 1
+Tuple_Triples_Basic 1 1
+Tuple_Triples_Sort 1 1
+Tuple_Mix_Basic 1 1
+Tuple_Mix_Sort 1 1
