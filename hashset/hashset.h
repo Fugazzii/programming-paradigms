@@ -1,6 +1,6 @@
 #ifndef _hashset_
 #define _hashset_
-#include "vector.h"
+#include "../vector/vector.h"
 
 /* File: hashtable.h
  * ------------------
@@ -75,7 +75,7 @@ typedef void (*HashSetFreeFunction)(void *elemAddr);
 typedef struct {
   // to be filled in by you
   //array of *vectors;
-  vector *hashTable;
+  vector* vec;
   int elemSize;
   int numBuckets;
   int size;
@@ -123,8 +123,14 @@ typedef struct {
  *    - comparefn is non-NULL
  */
 
-void HashSetNew(hashset *h, int elemSize, int numBuckets, 
-		HashSetHashFunction hashfn, HashSetCompareFunction comparefn, HashSetFreeFunction freefn);
+void HashSetNew(
+  hashset *h,
+  int elemSize,
+  int numBuckets,
+  HashSetHashFunction hashfn,
+  HashSetCompareFunction comparefn,
+  HashSetFreeFunction freefn
+);
 
 /**
  * Function: HashSetDispose
