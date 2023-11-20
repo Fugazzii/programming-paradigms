@@ -16,7 +16,7 @@
 #ifndef _vector_
 #define _vector_
 
-#include "bool.h"
+#include <stdbool.h>
 
 /**
  * Type: VectorCompareFunction
@@ -69,7 +69,7 @@ typedef void (*VectorFreeFunction)(void *elemAddr);
 
 typedef struct {
   // to be filled in by you
-  void *elems;
+  void* elems;
   int elemSize;
   int allocLen;
   int logLen;
