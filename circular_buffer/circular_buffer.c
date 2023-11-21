@@ -18,7 +18,18 @@ void CircularBufferInit(CircularBuffer* cb, int elem_size, int capacity, FreeFn 
 
 void CircularBufferDestroy(CircularBuffer* cb) {
     assert(cb->base != NULL);
-    free(cb->base);
+    int len = 0;
+    void* curr = cb->base;
+    while(len != cb->log_len) {
+        curr += cb->elem_size;
+        len += 1;
+
+        if(cb->free_fn != NULL) {
+            cb->free_fn(curr);
+        } else {
+            free(curr);
+        }
+    }
 }
 
 void CircularBufferPush(CircularBuffer* cb, void* value) {

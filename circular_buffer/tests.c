@@ -1,5 +1,5 @@
 #include "circular_buffer.h"
-// #include "../circular_buffer/student_buffer.h"
+#include "student_buffer.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -134,33 +134,33 @@ bool Strings() {
 
 // StudentBuffer
 
-// bool CountStudents() {
-//   StudentBuffer sb;
-//   StudentBufferInit(&sb, 3);
-//   Student x, y, z, w;
-//   x.name = strdup("free");
-//   x.gpa = 4;
-//   y.name = strdup("uni");
-//   y.gpa = 3;
-//   z.name = strdup("free");
-//   z.gpa = 4;
-//   w.name = strdup("unknown");
-//   w.gpa = 100;
-//   StudentBufferPush(&sb, &x);
-//   StudentBufferPush(&sb, &y);
-//   StudentBufferPush(&sb, &z);
-//   ASSERT_INT_EQ(2, StudentBufferCount(&sb, &x));
-//   ASSERT_INT_EQ(1, StudentBufferCount(&sb, &y));
-//   ASSERT_INT_EQ(0, StudentBufferCount(&sb, &w));
-//   StudentBufferDestroy(&sb);
-//   return true;
-// }
+bool CountStudents() {
+  StudentBuffer sb;
+  StudentBufferInit(&sb, 3);
+  Student x, y, z, w;
+  x.name = strdup("free");
+  x.gpa = 4;
+  y.name = strdup("uni");
+  y.gpa = 3;
+  z.name = strdup("free");
+  z.gpa = 4;
+  w.name = strdup("unknown");
+  w.gpa = 100;
+  StudentBufferPush(&sb, &x);
+  StudentBufferPush(&sb, &y);
+  StudentBufferPush(&sb, &z);
+  ASSERT_INT_EQ(2, StudentBufferCount(&sb, &x));
+  ASSERT_INT_EQ(1, StudentBufferCount(&sb, &y));
+  ASSERT_INT_EQ(0, StudentBufferCount(&sb, &w));
+  StudentBufferDestroy(&sb);
+  return true;
+}
 
 int main(int argc, char** argv) {
   TEST(Basic);
   TEST(OverwriteFirstElement);
   TEST(OverwriteMultipleTimes);
   TEST(Strings);
-  // TEST(CountStudents);
+  TEST(CountStudents);
   return 0;
 }
